@@ -4,7 +4,7 @@ module.exports = function (grunt) {
     sass: {
       dist: {
         options: { sourcemap: 'none',
-          // style: 'compressed'
+          style: 'compressed'
         },
         files: {
           'flexpoint.min.css': 'flexpoint.scss'

@@ -1,6 +1,6 @@
 {
   "name": "flexpoint",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A breakpoint-based flexbox grid implementation",
   "main": "flexpoint.min.css",
   "scripts": {
