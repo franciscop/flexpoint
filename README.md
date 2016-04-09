@@ -4,7 +4,7 @@ A <3kb breakpoint-based flexbox grid implementation. Choose **when to change you
 
 ## CDN
 
-
+Not yet
 
 
 ## Documentation
