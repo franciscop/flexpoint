@@ -1,8 +1,8 @@
 {
   "name": "flexpoint",
   "version": "1.0.0",
-  "description": "A flexible and breakpoint-based grid system based on flexbox",
-  "main": "flexpoint.css",
+  "description": "A breakpoint-based flexbox grid implementation",
+  "main": "flexpoint.min.css",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
