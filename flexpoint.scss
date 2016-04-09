@@ -7,6 +7,7 @@ $picnic-grid-gutter: 10px !default;
   margin-left: -$picnic-grid-gutter;
   width: calc(100% + #{$picnic-grid-gutter});
   flex-wrap: wrap;
+  transition: all .3s ease;
 }
 
 .flex > * {
@@ -14,6 +15,7 @@ $picnic-grid-gutter: 10px !default;
   flex: 1 1 auto; /* Default for IE10 bug */
   padding-left: $picnic-grid-gutter;
   padding-bottom: $picnic-grid-gutter;
+  transition: all .3s ease;
 }
 
 .flex[class*="one"], .flex[class*="two"], .flex[class*="three"], .flex[class*="four"], .flex[class*="five"], .flex[class*="six"], .flex[class*="seven"], .flex[class*="eight"], .flex[class*="nine"], .flex[class*="ten"], .flex[class*="eleven"], .flex[class*="twelve"] {
@@ -79,7 +81,7 @@ $picnic-grid-gutter: 10px !default;
     .half-#{$i}00 { width: 50%; }
     .third-#{$i}00 { width: 33.33333%; }
     .two-third-#{$i}00 { width: 66.66666%; }
-      .fourth-#{$i}00 { width: 25%; }
+    .fourth-#{$i}00 { width: 25%; }
     .three-fourth-#{$i}00 { width: 75%; }
     .fifth-#{$i}00 { width: 20%; }
     .two-fifth-#{$i}00 { width: 40%; }
@@ -90,7 +92,6 @@ $picnic-grid-gutter: 10px !default;
 }
 
 
-.off-full { margin-left: 100%; }
 .off-half { margin-left: 50%; }
 .off-third { margin-left: 33.33333%; }
 .off-two-third { margin-left: 66.66666%; }
@@ -101,6 +102,7 @@ $picnic-grid-gutter: 10px !default;
 .off-three-fifth { margin-left: 60%; }
 .off-four-fifth { margin-left: 80%; }
 .off-sixth { margin-left: 16.66666% }
+.off-none { margin-left: 0 }
 
 @for $i from 5 through 20 {
   @media all and (min-width: unquote($i + '00px')) {
@@ -115,5 +117,6 @@ $picnic-grid-gutter: 10px !default;
     .off-three-fifth-#{$i}00 { margin-left: 60%; }
     .off-four-fifth-#{$i}00 { margin-left: 80%; }
     .off-sixth-#{$i}00 { margin-left: 16.66666% }
+    .off-none-#{$i}00 { margin-left: 0 }
   }
 }

@@ -10,7 +10,7 @@
     <style>
       /* Just for demo purposes */
       html, body { margin: 0; padding: 0; }
-      main { max-width: 1000px; width: calc(100% - 50px); margin: 0 auto; }
+      main { max-width: 1000px; width: calc(100% - 50px); margin: 100px auto; }
       .flex span {
         font-family: Helvetica, Arial, sans-serif;
         display: block;
@@ -22,6 +22,9 @@
       .preview {
         margin: 20px 0;
       }
+      .darken .flex {
+        background: rgba(0, 0, 0, .2);
+      }
       .alert {
         background: #fdd;
         padding: 10px 20px;
@@ -32,9 +35,11 @@
   <body>
 
     <main>
+
+
       <h1>Flexpoint</h1>
 
-      <p>A breakpoint-based flexbox grid implementation. Choose <strong>when to change your layout depending on your content</strong> instead of the <em>device</em> you want to show as recommended by <a href="https://developers.google.com/web/fundamentals/design-and-ui/responsive/fundamentals/how-to-choose-breakpoints">Google's RWD</a>, by <a href="https://www.smashingmagazine.com/2013/03/logical-breakpoints-responsive-design/">Smashing Magazine's Logical Breakpoints</a> and me ☺</p>
+      <p>A &lt;3kb breakpoint-based flexbox grid implementation. Choose <strong>when to change your layout depending on your content</strong> instead of the <em>device</em> you want to show as recommended by <a href="https://developers.google.com/web/fundamentals/design-and-ui/responsive/fundamentals/how-to-choose-breakpoints">Google's RWD</a>, by <a href="https://www.smashingmagazine.com/2013/03/logical-breakpoints-responsive-design/">Smashing Magazine's Logical Breakpoints</a> and me ☺</p>
 
       <p class="alert">Note: the child &lt;span&gt; in the code are only for display purposes; you can put anything you want instead of them</p>
 
@@ -264,29 +269,92 @@
 
 
 
+      <h2>Offsets</h2>
 
-      <h2>Examples</h2>
+      <p>The children can also have one offset (empty space) before it. They are built adding the class <code>off-SIZE</code>, similar to the size but prefixing <code>off-</code>:</p>
 
       <div>
         <div class="preview">
-          <div class="flex four">
-            <div><span>1</span></div>
-            <div class="three-fourth">
-              <div class="flex three">
-                <div><span>2</span></div>
-                <div class="two-third">
-                  <div class="flex two">
-                    <div><span>3</span></div>
-                    <div><span>4</span></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+<div class="flex four">
+  <div><span>1</span></div>
+  <div><span>2</span></div>
+  <div class="off-fourth"><span>3</span></div>
+</div>
+        </div>
+        <pre><code class="language-html"></code></pre>
+      </div>
+
+      <p>We have many classes like those. They are the size of the offset relative to the parent grid:</p>
+
+      <div class="flex two three-600 six-1100">
+        <div><code>off-none</code></div>
+        <div><code>off-half</code></div>
+        <div><code>off-third</code></div>
+        <div><code>off-two-third</code></div>
+        <div><code>off-fourth</code></div>
+        <div><code>off-three-fourth</code></div>
+        <div><code>off-fifth</code></div>
+        <div><code>off-two-fifth</code></div>
+        <div><code>off-three-fifth</code></div>
+        <div><code>off-four-fifth</code></div>
+        <div><code>off-sixth</code></div>
+      </div>
+
+
+
+      <h2>Responsive offsets</h2>
+
+      <p>They can also have the minimum screen size when they start working:</p>
+
+      <div>
+        <div class="preview">
+<div class="flex three four-1000">
+  <div><span>1</span></div>
+  <div><span>2</span></div>
+  <div class="off-fourth-1000"><span>3</span></div>
+</div>
+        </div>
+        <pre><code class="language-html"></code></pre>
+      </div>
+
+      <p>The main difference with the width classes is that it includes a <code>none</code> in case you want to hide the offset at certain sizes and that it doesn't include a <code>full</code>
+
+
+
+
+      <h2>Examples</h2>
+
+
+      <p>A grid within a grid within a grid:</p>
+
+      <div>
+        <div class="preview darken">
+<div class="flex four">
+  <div><span>1</span></div>
+  <div class="three-fourth">
+    <div class="flex three">
+      <div><span>2</span></div>
+      <div class="two-third">
+        <div class="flex two">
+          <div><span>3</span></div>
+          <div><span>4</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
         </div>
 
         <pre><code class="language-html"></code></pre>
       </div>
+
+
+      <h2>Thanks</h2>
+
+      <ul>
+        <li><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">CSS-Tricks' A Guide to Flexbox</a></li>
+      </ul>
+
     </main>
 
 
