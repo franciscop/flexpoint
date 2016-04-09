@@ -1,0 +1,26 @@
+{
+  "name": "flexpoint",
+  "description": "A breakpoint-based flexbox grid implementation",
+  "main": "flexpoint.min.css",
+  "authors": [
+    "Francisco Presencia Fandos <publicfrancisco@hotmail.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "flexbox",
+    "grid",
+    "flex",
+    "flexpoint",
+    "flex-point",
+    "reponsive",
+    "breakpoint"
+  ],
+  "homepage": "https://github.com/franciscop/flexpoint",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

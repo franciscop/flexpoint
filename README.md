@@ -10,3 +10,12 @@ A <3kb breakpoint-based flexbox grid implementation. Choose **when to change you
 ## Documentation
 
 See how to use it in the [**website documentation**](http://franciscop.github.io/flexpoint/)
+
+
+## License
+
+MIT License (see LICENSE)
+
+## Author
+
+[Francisco Presencia Fandos](http://francisco.io/). You can also [hire me](http://francisco.io/resume.pdf) to make awesome projects with you :)
