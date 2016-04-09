@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Flexpoint - Better responsive grid system</title>
+    <meta charset="utf-8">
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/picnicss/4.1.1/plugins.min.css">
+    <link rel="stylesheet" href="flexpoint.min.css">
+    <link rel="stylesheet" href="prism.css">
+    <style>
+      /* Just for demo purposes */
+      html, body { margin: 0; padding: 0; }
+      main { max-width: 1000px; width: calc(100% - 50px); margin: 0 auto; }
+      .flex span {
+        font-family: Helvetica, Arial, sans-serif;
+        display: block;
+        background: #0074D9;
+        color: #fff;
+        padding: 10px;
+        text-align: center;
+      }
+      .preview {
+        margin: 20px 0;
+      }
+      .alert {
+        background: #fdd;
+        padding: 10px 20px;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+
+    <main>
+      <h1>Flexpoint</h1>
+
+      <p>A breakpoint-based flexbox grid implementation. Choose <strong>when to change your layout depending on your content</strong> instead of the <em>device</em> you want to show as recommended by <a href="https://developers.google.com/web/fundamentals/design-and-ui/responsive/fundamentals/how-to-choose-breakpoints">Google's RWD</a>, by <a href="https://www.smashingmagazine.com/2013/03/logical-breakpoints-responsive-design/">Smashing Magazine's Logical Breakpoints</a> and me ☺</p>
+
+      <p class="alert">Note: the child &lt;span&gt; in the code are only for display purposes; you can put anything you want instead of them</p>
+
+      <p>You can create complex, flexible layouts with it. Just resize the browser to see how powerful it is:</p>
+
+      <div>
+        <div class="preview">
+<div class="flex two four-500 six-800">
+  <div><span>1</span></div>
+  <div><span>2</span></div>
+  <div class="full half-500 third-800"><span>3</span></div>
+  <div><span>4</span></div>
+  <div><span>5</span></div>
+  <div><span>6</span></div>
+  <div><span>7</span></div>
+  <div><span>8</span></div>
+  <div><span>9</span></div>
+  <div class="off-half off-fourth-500 off-sixth-800"><span>10</span></div>
+</div>
+        </div>
+        <pre><code class="language-html"></code></pre>
+      </div>
+
+
+
+      <h2>Equaly sized columns</h2>
+
+      <p>Let's start through the basics though. Just a container with equaly sized children:</p>
+
+      <div>
+        <div class="preview">
+<div class="flex">
+  <div><span>1</span></div>
+  <div><span>2</span></div>
+  <div><span>3</span></div>
+  <div><span>4</span></div>
+  <div><span>5</span></div>
+  <div><span>6</span></div>
+</div>
+        </div>
+        <pre><code class="language-html"></code></pre>
+      </div>
+
+      <p>With the class <code>flex</code>, the children will be spaced equaly to fill all of the content.</p>
+
+
+
+
+      <h2>Column count</h2>
+
+      <p>If instead you prefer certain column count, such as in a gallery where it can span several rows, use a counter besides the class <code>flex</code>:</p>
+
+      <div>
+        <div class="preview">
+<div class="flex three">
+  <div><span>1</span></div>
+  <div><span>2</span></div>
+  <div><span>3</span></div>
+  <div><span>4</span></div>
+  <div><span>5</span></div>
+</div>
+        </div>
+        <pre><code class="language-html"></code></pre>
+      </div>
+
+      <p>The columns will keep being equaly spaced, but this time with the width corresponding to the column counter. You can use any number as a class from <code>one</code> to <code>twelve</code>:
+
+      <div class="flex six">
+        <div><code>one</code></div>
+        <div><code>two</code></div>
+        <div><code>three</code></div>
+        <div><code>four</code></div>
+        <div><code>five</code></div>
+        <div><code>six</code></div>
+        <div><code>seven</code></div>
+        <div><code>eight</code></div>
+        <div><code>nine</code></div>
+        <div><code>ten</code></div>
+        <div><code>eleven</code></div>
+        <div><code>twelve</code></div>
+      </div>
+
+      <p>Most grid systems use a 12 grid system, but we wanted to use a more flexible system and allow you to choose the grid size.</p>
+
+
+
+      <h2>Responsive column count</h2>
+
+      <p>We follow a mobile-first design. Put the number of columns for mobile as explained in the previous point. Then, when things get too stretched, add a column counter with the number of pixels in 100 increments as follows:</p>
+
+      <div>
+        <div class="preview">
+<div class="flex two three-600 six-1200">
+  <div><span>1</span></div>
+  <div><span>2</span></div>
+  <div><span>3</span></div>
+  <div><span>4</span></div>
+  <div><span>5</span></div>
+  <div><span>6</span></div>
+</div>
+        </div>
+        <pre><code class="language-html"></code></pre>
+      </div>
+
+      <p>The number after the column count as in <code>-600</code> or <code>-1200</code> are the breakpoints. When the website width is <strong>over that number</strong>, that column count will be used instead of the previous. If we use two or more, the largest column count will be used. For example, in a desktop with a screen of 1920x1080px the previous one will display 6 columns. Any screen from 600px to 1200px will display three columns and smaller than 600px will display 2 columns.</p>
+
+      <p>The increment is 100px and starts in 500px up to 2000px both included. You can use any of those sufixes for the column count class:</p>
+
+<div class="flex two five-800 ten-1200">
+  <div><code>-500</code></div>
+  <div><code>-600</code></div>
+  <div><code>-700</code></div>
+  <div><code>-800</code></div>
+  <div><code>-900</code></div>
+  <div><code>-1000</code></div>
+  <div><code>-1100</code></div>
+  <div><code>-1200</code></div>
+  <div><code>-1300</code></div>
+  <div><code>-1400</code></div>
+  <div><code>-1500</code></div>
+  <div><code>-1600</code></div>
+  <div><code>-1700</code></div>
+  <div><code>-1800</code></div>
+  <div><code>-1900</code></div>
+  <div><code>-2000</code></div>
+</div>
+
+
+
+      <h2>Remainders</h2>
+
+      <p>You can also modify the remainder content as you wish with a couple of utility classes. This is the default:</p>
+
+      <div>
+        <div class="preview">
+<div class="flex three">
+  <div><span>1</span></div>
+  <div><span>2</span></div>
+  <div><span>3</span></div>
+  <div><span>4</span></div>
+  <div><span>5</span></div>
+</div>
+        </div>
+        <pre><code class="language-html"></code></pre>
+      </div>
+
+
+      <p>You can <code>grow</code> them:</p>
+
+      <div>
+        <div class="preview">
+<div class="flex three grow">
+  <div><span>1</span></div>
+  <div><span>2</span></div>
+  <div><span>3</span></div>
+  <div><span>4</span></div>
+  <div><span>5</span></div>
+</div>
+        </div>
+        <pre><code class="language-html"></code></pre>
+      </div>
+
+      <p>Or you can <code>center</code> them:</p>
+
+      <div>
+        <div class="preview">
+<div class="flex three center">
+  <div><span>1</span></div>
+  <div><span>2</span></div>
+  <div><span>3</span></div>
+  <div><span>4</span></div>
+  <div><span>5</span></div>
+</div>
+        </div>
+        <pre><code class="language-html"></code></pre>
+      </div>
+
+
+
+      <h2>Children sizing</h2>
+
+      <p>Now that we know how the parent (or grid) can modify itself and the elements below them, the children can also go rebel and behave on their own. Say that one children wants to be half of the size of the parent. Easy, just add the class <code>half</code> :</p>
+
+      <div>
+        <div class="preview">
+<div class="flex four">
+  <div><span>1</span></div>
+  <div><span>2</span></div>
+  <div class="half"><span>3</span></div>
+</div>
+        </div>
+        <pre><code class="language-html"></code></pre>
+      </div>
+
+      <p>We have many classes like those. They are the size relative to the parent grid:</p>
+
+      <div class="flex six">
+        <div><code>full</code></div>
+        <div><code>half</code></div>
+        <div><code>third</code></div>
+        <div><code>two-third</code></div>
+        <div><code>fourth</code></div>
+        <div><code>three-fourth</code></div>
+        <div><code>fifth</code></div>
+        <div><code>two-fifth</code></div>
+        <div><code>three-fifth</code></div>
+        <div><code>four-fifth</code></div>
+        <div><code>sixth</code></div>
+      </div>
+
+
+
+      <h2>Responsive children</h2>
+
+      <p>They can also be fine-tuned in a way similar to the above:</p>
+
+      <div>
+        <div class="preview">
+<div class="flex four">
+  <div class="half fourth-1000"><span>1</span></div>
+  <div class="half fourth-1000"><span>2</span></div>
+  <div class="full half-1000"><span>3</span></div>
+</div>
+        </div>
+        <pre><code class="language-html"></code></pre>
+      </div>
+
+
+
+
+      <h2>Examples</h2>
+
+      <div>
+        <div class="preview">
+          <div class="flex four">
+            <div><span>1</span></div>
+            <div class="three-fourth">
+              <div class="flex three">
+                <div><span>2</span></div>
+                <div class="two-third">
+                  <div class="flex two">
+                    <div><span>3</span></div>
+                    <div><span>4</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <pre><code class="language-html"></code></pre>
+      </div>
+    </main>
+
+
+    <script src="https://cdn.jsdelivr.net/umbrella/2.0.1/umbrella.min.js"></script>
+    <script>
+
+      function clean(str){ return str.replace(/^\s+/g, '').replace(/\s+$/g, ''); }
+      u('.preview').each(function(el){
+        u(el).parent().find('code').text(clean(u(el).html()));
+      });
+    </script>
+
+    <script src="prism.js"></script>
+  </body>
+</html>

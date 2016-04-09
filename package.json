@@ -1,0 +1,30 @@
+{
+  "name": "flexpoint",
+  "version": "1.0.0",
+  "description": "A flexible and breakpoint-based grid system based on flexbox",
+  "main": "flexpoint.css",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/franciscop/flexpoint"
+  },
+  "keywords": [
+    "flexbox",
+    "grid",
+    "flex",
+    "flexpoint",
+    "flex-point",
+    "reponsive",
+    "breakpoint"
+  ],
+  "author": "Francisco Presencia Fandos <publicfrancisco@hotmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "grunt": "^1.0.1",
+    "grunt-bytesize": "^0.1.1",
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-watch": "^1.0.0"
+  }
+}
