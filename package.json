@@ -21,7 +21,7 @@
   ],
   "author": "Francisco Presencia Fandos <publicfrancisco@hotmail.com>",
   "license": "MIT",
-  "dependencies": {
+  "devDependencies": {
     "grunt": "^1.0.1",
     "grunt-bytesize": "^0.1.1",
     "grunt-contrib-sass": "^1.0.0",
