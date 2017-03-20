@@ -4,7 +4,7 @@ A <3kb breakpoint-based flexbox grid implementation. Choose **when to change you
 
 ## CDN
 
-Not yet
+`https://cdn.jsdelivr.net/flexpoint/1.0.1/flexpoint.min.css`
 
 
 ## Documentation
