@@ -1,10 +1,12 @@
 {
   "name": "flexpoint",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "A utility class library for making grid layouts with flexbox",
   "author": "Francisco Presencia <public@francisco.io> (https://francisco.io/)",
   "repository": "https://github.com/franciscop/flexpoint.git",
-  "funding": "https://www.paypal.me/franciscopresencia/19",
+  "funding": {
+    "url": "https://www.paypal.me/franciscopresencia/19"
+  },
   "license": "MIT",
   "main": "index.min.js",
   "scripts": {
