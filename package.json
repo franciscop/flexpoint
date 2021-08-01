@@ -1,12 +1,14 @@
 {
   "name": "flexpoint",
-  "version": "1.1.0",
-  "description": "A breakpoint-based flexbox grid implementation",
-  "main": "flexpoint.min.css",
-  "scripts": {},
-  "repository": {
-    "type": "git",
-    "url": "github.com/franciscop/flexpoint"
+  "version": "1.2.0",
+  "description": "A utility class library for making grid layouts with flexbox",
+  "author": "Francisco Presencia <public@francisco.io> (https://francisco.io/)",
+  "repository": "https://github.com/franciscop/flexpoint.git",
+  "funding": "https://www.paypal.me/franciscopresencia/19",
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack -c"
   },
   "keywords": [
     "flexbox",
@@ -17,12 +19,26 @@
     "reponsive",
     "breakpoint"
   ],
-  "author": "Francisco Presencia Fandos <publicfrancisco@hotmail.com>",
-  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.6",
+    "babel-polyfill": "^6.26.0",
+    "react": "^16.3.0",
+    "regenerator-runtime": "^0.12.1",
+    "style-loader": "^0.20.3",
+    "webpack": "^4.25.0",
+    "webpack-cli": "^3.1.2"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env",
+      "@babel/preset-react"
+    ],
+    "plugins": []
+  },
   "dependencies": {
-    "grunt": "^1.0.1",
-    "grunt-bytesize": "^0.1.1",
-    "grunt-contrib-sass": "^1.0.0",
-    "grunt-contrib-watch": "^1.0.0"
+    "css-loader": "^1.0.1"
   }
 }
