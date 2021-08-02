@@ -1,6 +1,6 @@
 # Flexpoint
 
-A utility class library for making grid layouts with flexbox. The main focus is on React, so it has some helpers. Choose **when to change your layout depending on your content** instead of the _device_ you want to show as recommended by [Google's RWD](https://developers.google.com/web/fundamentals/design-and-ui/responsive/fundamentals/how-to-choose-breakpoints), by [Smashing Magazine's Logical Breakpoints](https://www.smashingmagazine.com/2013/03/logical-breakpoints-responsive-design/) and me ☺
+A React library for making grid layouts with flexbox in 9kb (min+gzip). Choose **when to change your layout depending on your content** instead of the _device_ you want to show as recommended by [Google's RWD](https://developers.google.com/web/fundamentals/design-and-ui/responsive/fundamentals/how-to-choose-breakpoints), by [Smashing Magazine's Logical Breakpoints](https://www.smashingmagazine.com/2013/03/logical-breakpoints-responsive-design/) and me ☺
 
 ## Getting started
 
@@ -16,7 +16,19 @@ To use with React, you can import the main component Flex and then put the class
 // npm i flexpoint
 import Flex from "flexpoint";
 
-export default () => {};
+// Three columns by default, and from +1200px screens render six columns
+export default () => (
+  <Flex three six-600>
+    <div>Hello</div>
+    <Flex hide flex-600>Large screen</Flex>
+    <Flex hide-600>Small screens</Flex>
+    <div>World</div>
+
+    <Flex full half-600>
+      I span all the screen on mobile but only half on desktop
+    </Flex>
+  </Flex>
+);
 ```
 
 ## Documentation
